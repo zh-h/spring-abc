@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation=" 
+   http://www.springframework.org/schema/beans  
+   http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+   http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context-3.2.xsd 
+   http://www.springframework.org/schema/mvc 
+   http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+	
+	<description>Spring MVC Configuration</description>
+	<context:component-scan base-package="xyz.springabc.web" />
+	<mvc:annotation-driven />
+	<mvc:resources mapping="/js/**" location="/js/"
+		cache-period="31556926" />
+	<mvc:resources mapping="/fonts/**" location="/fonts/" />
+	<mvc:resources mapping="/css/**" location="/css/"
+		cache-period="31556926" />
+	<mvc:resources mapping="/img/**" location="/img/"
+		cache-period="31556926" />
+	<mvc:resources mapping="/upload/**" location="/upload/"
+		cache-period="31556926" />
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="xyz.springabc.web.interceptor.GlobalInte"></bean>
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/account/setting" />
+			<mvc:mapping path="/notifications" />
+			<mvc:mapping path="/notifications/all" />
+			<mvc:mapping path="/topics/create" />
+			<mvc:mapping path="/topics/save" />
+			<mvc:mapping path="/topics/comment" />
+			<mvc:mapping path="/topics/comments" />
+			<mvc:mapping path="/users/collect" />
+			<mvc:mapping path="/users/uncollect" />
+			<mvc:mapping path="/users/follow" />
+			<mvc:mapping path="/users/unfollow" />
+			<mvc:mapping path="/!focused"/>
+			<bean class="xyz.springabc.web.interceptor.AuthenInte" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/back/**"/>
+			<bean class="xyz.springabc.web.interceptor.AdminInte" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+
+	<bean id="propertyPlaceholderConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:application.properties</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 配置前后缀 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- 上传文件拦截，设置最大上传文件大小 10M=10*1024*1024(B)=10485760 bytes -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="${maxUploadSize}" />
+	</bean>
+
+	<!-- json 返回 -->
+	<bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
+	<bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean
+					class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+			</list>
+		</property>
+	</bean>
+</beans>
