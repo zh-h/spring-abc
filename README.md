@@ -18,5 +18,18 @@
 
 #使用
 1. 默认账户 springabc springabc
-2. ```$youpath/back/``后台,配置分类节点，导航等
+2. `hostname/back/`后台,配置分类节点，导航等
+
+# 预览
+
+![list](https://raw.githubusercontent.com/zh-h/spring-abc/master/show-off/list.png)
+
+![article](https://raw.githubusercontent.com/zh-h/spring-abc/master/show-off/article.png)
+
+![home](https://raw.githubusercontent.com/zh-h/spring-abc/master/show-off/home.png)
+
+![log](https://raw.githubusercontent.com/zh-h/spring-abc/master/show-off/log.png)
+
+![](https://raw.githubusercontent.com/zh-h/spring-abc/master/show-off/node.png)
+
 
