@@ -45,3 +45,7 @@
     .pagination .active a{
         background-color:#31b0d5;
         border-color:#269abc}
+    .media-body .signature{
+    height:18px;
+    font-style:italic;
+    }

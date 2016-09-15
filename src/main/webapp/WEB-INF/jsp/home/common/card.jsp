@@ -24,12 +24,9 @@
 									<a href="${x}/users/${topic.user.id}/topics"><h4>${topic.user.nick}</h4></a>
 								</p>
 								<p>第${topic.user.number}号会员</p>
-								<p>加入于${topic.user.createAt}</p>
-								<hr style="margin: 0px">
-								<p>${topic.user.signature}</p>
-
+								<p>加入于${user.createAt}</p>
+                                <p class="signature">${user.signature}</p>
 							</div>
-
 						</div>
 					</div>
 				</div>
