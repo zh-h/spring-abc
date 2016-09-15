@@ -79,7 +79,7 @@
 										<div class="input-group">
 											<span class="input-group-addon">节点</span> <select
 												class="form-control" id="topicNodeName" name="topicNodeName">
-												<option value="Spring Framework">Spring Framework</option>
+												<option value="test">test</option>
 											</select>
 										</div>
 									</div>
