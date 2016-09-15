@@ -25,7 +25,7 @@ import java.util.Date;
 @Service
 public class UserServ {
 
-    public static final String AVATAR = "";
+    public static final String DEFAULT_AVATAR = "http://tva4.sinaimg.cn/crop.138.0.408.408.180/e7c91439jw8f7anxq2qkkj20f70bc74x.jpg";
 
     @Autowired
     private UserRepo userRepo;
@@ -63,7 +63,7 @@ public class UserServ {
         }
         user.setNick(username);//默认的昵称就是用户名
         user.setPassword(EncryptUtil.encryptUsernameAndPassword(username, password));
-        user.setAvatar("http://tp2.sinaimg.cn/3888714809/180/5727878850/1");
+        user.setAvatar(DEFAULT_AVATAR);
         user.setNumber(userRepo.count());
         user.setCreateAt(new Date());
         return userRepo.save(user);

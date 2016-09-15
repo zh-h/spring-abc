@@ -319,7 +319,7 @@ DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 INSERT INTO `user` (`id`, `avatar`, `comment_count`, `company`, `create_at`, `description`, `email`, `github`, `home_page`, `location`, `nick`, `number`, `password`, `points`, `role`, `signature`, `topic_count`, `twitter`, `update_at`, `username`) VALUES
-	(7, 'http://tp2.sinaimg.cn/3888714809/180/5727878850/1', NULL, NULL, '2016-09-15 21:34:52', 'spring-abc', 'admin@spring-abc.xyz', 'https://github.com/zh-h/spring-abc', 'http://spring-abc.xyz/', '广州市', 'springabc', 0, '1afae1b673ce662874ec44cad872d9d6', 0, 'admin', 'spring-abc', NULL, 'https://github.com/zh-h', NULL, 'springabc');
+	(7, 'http://tva4.sinaimg.cn/crop.138.0.408.408.180/e7c91439jw8f7anxq2qkkj20f70bc74x.jpg', NULL, NULL, '2016-09-15 21:34:52', 'spring-abc', 'admin@spring-abc.xyz', 'https://github.com/zh-h/spring-abc', 'http://spring-abc.xyz/', '广州市', 'springabc', 0, '1afae1b673ce662874ec44cad872d9d6', 0, 'admin', 'spring-abc', NULL, 'https://github.com/zh-h', NULL, 'springabc');
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
