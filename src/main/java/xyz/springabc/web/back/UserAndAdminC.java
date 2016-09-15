@@ -31,7 +31,7 @@ public class UserAndAdminC {
 	@RequestMapping("/admin")
 	public String admin(@RequestParam(value="p",defaultValue="1") int p,
 			Model model){
-		Page<User> userPage=userServ.getByRole(UserServ.ROLE_ADMIIN,p);
+		Page<User> userPage=userServ.getByRole(User.ROLE_ADMIIN,p);
 		model.addAttribute("users",userPage.getContent());
 		model.addAttribute("page",userPage);
 		return "/BACK/users/admin";
@@ -99,7 +99,7 @@ public class UserAndAdminC {
 		if(user==null){
 			attributes.addFlashAttribute("error","用户不存在");
 		}else{
-			userServ.changeRole(user, UserServ.ROLE_ADMIIN);
+			userServ.changeRole(user, User.ROLE_ADMIIN);
 			attributes.addFlashAttribute("msg","用户已添加");
 		}
 		return "redirect:/back/users/admin";
@@ -108,7 +108,7 @@ public class UserAndAdminC {
 	@RequestMapping("/admin/{id}/remove")
 	public String remove(@PathVariable("id") int id,RedirectAttributes attributes){
 		User user=userServ.getByUserId(id);
-		userServ.changeRole(user, UserServ.ROLE_MENBER);
+		userServ.changeRole(user, User.ROLE_MENBER);
 		return "redirect:/back/users/admin";
 	}
 }

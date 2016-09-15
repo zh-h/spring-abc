@@ -25,10 +25,6 @@ import java.util.Date;
 @Service
 public class UserServ {
 
-    public static final String ROLE_ADMIIN = "admin";
-
-    public static final String ROLE_MENBER = "menber";
-
     public static final String AVATAR = "";
 
     @Autowired
