@@ -4,7 +4,7 @@
     <groupId>xyz.springabc</groupId>
     <artifactId>springabc</artifactId>
     <packaging>war</packaging>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>xyz.springabc Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
@@ -252,6 +252,16 @@
                     </systemProperties>
 
                     <reload>manual</reload>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
         </plugins>
