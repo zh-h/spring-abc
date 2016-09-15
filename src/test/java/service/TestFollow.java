@@ -1,19 +1,15 @@
 package service;
 
-import static org.junit.Assert.*;
-
-import javax.transaction.Transactional;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
 import xyz.springabc.domin.User;
 import xyz.springabc.repository.UserRepo;
 import xyz.springabc.service.FollowServ;
-import xyz.springabc.service.UserServ;
+
+import javax.transaction.Transactional;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("/applicationContext.xml")
 public class TestFollow {

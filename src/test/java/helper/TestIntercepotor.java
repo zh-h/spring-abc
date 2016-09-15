@@ -1,11 +1,9 @@
 package helper;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import org.junit.Test;
 
 public class TestIntercepotor {
 	public static final Pattern BACK_PATTERN=Pattern.compile(" .*/back/.* ");

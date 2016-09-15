@@ -1,11 +1,9 @@
 package entity;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
-import org.junit.Test;
 
 public class TestJPA {
 

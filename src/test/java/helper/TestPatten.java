@@ -1,11 +1,9 @@
 package helper;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import org.junit.Test;
 
 public class TestPatten {
 	public Pattern pattern=Pattern.compile("^(?!_)(?!.*?_$)[A-Za-z0-9|_]{3,9}");
