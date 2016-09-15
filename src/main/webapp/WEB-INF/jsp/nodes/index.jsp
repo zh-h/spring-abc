@@ -21,8 +21,7 @@
 									<a href="${x}/nodes/${node.id}"><h4>${node.name}</h4></a>
 								</p>
 								<p>共有${node.topicCount}个话题</p>
-								<hr style="margin: 0px">
-								<p>${node.description}</p>
+								<p class="description">${node.description}</p>
 							</div>
 						</div>
 					</div>
