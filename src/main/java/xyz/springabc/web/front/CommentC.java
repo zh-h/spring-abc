@@ -1,23 +1,21 @@
 package xyz.springabc.web.front;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import xyz.springabc.domin.Comment;
 import xyz.springabc.domin.User;
 import xyz.springabc.service.CommentServ;
 import xyz.springabc.service.UserServ;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/comments")

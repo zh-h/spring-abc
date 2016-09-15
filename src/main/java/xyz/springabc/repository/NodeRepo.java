@@ -1,15 +1,12 @@
 package xyz.springabc.repository;
 
-import java.util.List;
-
-import javax.transaction.Transactional;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-
 import xyz.springabc.domin.Node;
+
+import java.util.List;
 
 public interface NodeRepo extends JpaRepository<Node, Integer>{
 	Node findByName(String name);

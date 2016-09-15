@@ -1,31 +1,22 @@
 package xyz.springabc.web.back;
 
-import java.util.Date;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Service;
-import org.springframework.test.web.servlet.result.FlashAttributeResultMatchers;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import xyz.springabc.domin.Node;
 import xyz.springabc.domin.Topic;
-import xyz.springabc.repository.NodeRepo;
-import xyz.springabc.repository.TopicRepo;
 import xyz.springabc.service.NodeServ;
 import xyz.springabc.service.SectionServ;
 import xyz.springabc.service.TopicServ;
 import xyz.springabc.service.UserServ;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Service
 @RequestMapping("/back/content/topics")
@@ -97,7 +88,6 @@ public class ContentTopicC {
 	/**
 	 * 删除话题
 	 * @param id
-	 * @param model
 	 * @return
 	 */
 	@RequestMapping("/{id}/delete")

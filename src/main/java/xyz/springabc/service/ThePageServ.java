@@ -1,9 +1,5 @@
 package xyz.springabc.service;
 
-import java.util.Date;
-
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -11,9 +7,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import org.springframework.validation.BindingResult;
-
 import xyz.springabc.repository.ThePageRepo;
+
+import java.util.Date;
 
 @Service
 public class ThePageServ {
@@ -59,7 +55,7 @@ public class ThePageServ {
 	
 	/**
 	 * 浏览数加一
-	 * @param page
+	 * @param thePage
 	 */
 	public void view(xyz.springabc.domin.ThePage thePage){
 		thePageRepo.plusViewCount(thePage.getId());

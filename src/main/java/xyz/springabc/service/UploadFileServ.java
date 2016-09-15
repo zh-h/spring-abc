@@ -1,23 +1,14 @@
 package xyz.springabc.service;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
-import com.qiniu.common.QiniuException;
-
-import antlr.collections.List;
 import xyz.springabc.web.helper.Qiniu;
 import xyz.springabc.web.helper.Qiniu.QiniuResponse;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.UUID;
 
 @Service
 public class UploadFileServ {

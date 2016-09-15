@@ -2,7 +2,6 @@ package xyz.springabc.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-
 import xyz.springabc.domin.Focus;
 
 public interface FocusRepo extends JpaRepository<Focus, Integer>{

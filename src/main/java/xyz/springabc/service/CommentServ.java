@@ -1,19 +1,11 @@
 package xyz.springabc.service;
 
-import java.text.MessageFormat;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import xyz.springabc.domin.Comment;
 import xyz.springabc.domin.Notification;
 import xyz.springabc.domin.Topic;
@@ -23,11 +15,14 @@ import xyz.springabc.repository.CommentRepo;
 import xyz.springabc.repository.NotificationRepo;
 import xyz.springabc.repository.TopicRepo;
 import xyz.springabc.repository.UserRepo;
-import xyz.springabc.web.viewmodel.CommentVM;
 
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
+import java.text.MessageFormat;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class CommentServ {
@@ -60,7 +55,6 @@ public class CommentServ {
 	 * 按照话题查找
 	 * @param topic
 	 * @param page
-	 * @param size
 	 * @return
 	 */
 	public Page<Comment> getByTopicWithLike(Topic topic,int page, User user){

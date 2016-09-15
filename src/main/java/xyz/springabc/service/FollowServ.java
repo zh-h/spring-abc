@@ -1,18 +1,15 @@
 package xyz.springabc.service;
 
-import java.util.Date;
-
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-
 import xyz.springabc.domin.Follow;
 import xyz.springabc.domin.User;
 import xyz.springabc.repository.FollowReop;
+
+import javax.transaction.Transactional;
+import java.util.Date;
 
 @Service
 public class FollowServ {

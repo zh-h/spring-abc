@@ -5,7 +5,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-
 import xyz.springabc.domin.Comment;
 import xyz.springabc.domin.Topic;
 import xyz.springabc.domin.User;

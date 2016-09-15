@@ -1,17 +1,15 @@
 package xyz.springabc.service;
 
-import java.util.List;
-
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-
 import xyz.springabc.domin.Notification;
 import xyz.springabc.domin.User;
 import xyz.springabc.repository.NotificationRepo;
+
+import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 public class NotificationServ {

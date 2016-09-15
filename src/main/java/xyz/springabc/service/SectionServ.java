@@ -1,12 +1,11 @@
 package xyz.springabc.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import xyz.springabc.domin.Section;
 import xyz.springabc.repository.SectionRepo;
+
+import java.util.List;
 
 @Service
 public class SectionServ {

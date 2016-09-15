@@ -1,19 +1,15 @@
 package xyz.springabc.service;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
-import javax.servlet.ServletContext;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import xyz.springabc.domin.Field;
 import xyz.springabc.domin.Property;
 import xyz.springabc.repository.FieldRepo;
 import xyz.springabc.repository.PropertyRepo;
+
+import javax.servlet.ServletContext;
+import java.util.Map;
+import java.util.Set;
 
 @Service
 public class PropertyServ {
