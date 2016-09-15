@@ -10,12 +10,12 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- 导出 spring_winds 的数据库结构
-CREATE DATABASE IF NOT EXISTS `spring_winds` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `spring_winds`;
+-- 导出 spring_abc 的数据库结构
+CREATE DATABASE IF NOT EXISTS `spring_abc` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `spring_abc`;
 
 
--- 导出  表 spring_winds.collection 结构
+-- 导出  表 spring_abc.collection 结构
 CREATE TABLE IF NOT EXISTS `collection` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `create_at` datetime DEFAULT NULL,
@@ -28,12 +28,12 @@ CREATE TABLE IF NOT EXISTS `collection` (
   CONSTRAINT `FK_miyylw8b3lg44gmh7k5y3u72h` FOREIGN KEY (`topic_id`) REFERENCES `topic` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- 正在导出表  spring_winds.collection 的数据：~6 rows (大约)
+-- 正在导出表  spring_abc.collection 的数据：~6 rows (大约)
 DELETE FROM `collection`;
 
 
 
--- 导出  表 spring_winds.comment 结构
+-- 导出  表 spring_abc.comment 结构
 CREATE TABLE IF NOT EXISTS `comment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `content` mediumtext NOT NULL,
@@ -50,12 +50,12 @@ CREATE TABLE IF NOT EXISTS `comment` (
   CONSTRAINT `FK_mxoojfj9tmy8088avf57mpm02` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=163 DEFAULT CHARSET=utf8;
 
--- 正在导出表  spring_winds.comment 的数据：~26 rows (大约)
+-- 正在导出表  spring_abc.comment 的数据：~26 rows (大约)
 DELETE FROM `comment`;
 
 
 
--- 导出  表 spring_winds.comment_user 结构
+-- 导出  表 spring_abc.comment_user 结构
 CREATE TABLE IF NOT EXISTS `comment_user` (
   `comment_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `comment_user` (
 
 
 
--- 导出  表 spring_winds.field 结构
+-- 导出  表 spring_abc.field 结构
 CREATE TABLE IF NOT EXISTS `field` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `content` mediumtext NOT NULL,
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `field` (
   CONSTRAINT `FK_r5pkebdshlf1tcq0ldc7k8i0x` FOREIGN KEY (`property_id`) REFERENCES `property` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
--- 正在导出表  spring_winds.field 的数据：~19 rows (大约)
+-- 正在导出表  spring_abc.field 的数据：~19 rows (大约)
 DELETE FROM `field`;
 /*!40000 ALTER TABLE `field` DISABLE KEYS */;
 INSERT INTO `field` (`id`, `content`, `meta`, `property_id`) VALUES
@@ -104,7 +104,7 @@ INSERT INTO `field` (`id`, `content`, `meta`, `property_id`) VALUES
 /*!40000 ALTER TABLE `field` ENABLE KEYS */;
 
 
--- 导出  表 spring_winds.focus 结构
+-- 导出  表 spring_abc.focus 结构
 CREATE TABLE IF NOT EXISTS `focus` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `create_at` datetime NOT NULL,
@@ -117,12 +117,12 @@ CREATE TABLE IF NOT EXISTS `focus` (
   CONSTRAINT `FK_shp43xvgrewctw5s4vo2993eq` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- 正在导出表  spring_winds.focus 的数据：~4 rows (大约)
+-- 正在导出表  spring_abc.focus 的数据：~4 rows (大约)
 DELETE FROM `focus`;
 
 
 
--- 导出  表 spring_winds.follow 结构
+-- 导出  表 spring_abc.follow 结构
 CREATE TABLE IF NOT EXISTS `follow` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `create_at` datetime NOT NULL,
@@ -135,12 +135,12 @@ CREATE TABLE IF NOT EXISTS `follow` (
   CONSTRAINT `FK_tkjr0k3x569btja89gb5vccck` FOREIGN KEY (`following_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 
--- 正在导出表  spring_winds.follow 的数据：~4 rows (大约)
+-- 正在导出表  spring_abc.follow 的数据：~4 rows (大约)
 DELETE FROM `follow`;
 
 
 
--- 导出  表 spring_winds.node 结构
+-- 导出  表 spring_abc.node 结构
 CREATE TABLE IF NOT EXISTS `node` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `avatar` varchar(255) DEFAULT NULL,
@@ -155,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `node` (
   CONSTRAINT `FK_kihhhba7yo0oh5kplfgafba4e` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
--- 正在导出表  spring_winds.node 的数据：~12 rows (大约)
+-- 正在导出表  spring_abc.node 的数据：~12 rows (大约)
 DELETE FROM `node`;
 /*!40000 ALTER TABLE `node` DISABLE KEYS */;
 INSERT INTO `node` (`id`, `avatar`, `description`, `topic_count`, `name`, `status`, `section_id`) VALUES
@@ -163,7 +163,7 @@ INSERT INTO `node` (`id`, `avatar`, `description`, `topic_count`, `name`, `statu
 /*!40000 ALTER TABLE `node` ENABLE KEYS */;
 
 
--- 导出  表 spring_winds.notification 结构
+-- 导出  表 spring_abc.notification 结构
 CREATE TABLE IF NOT EXISTS `notification` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `status` int(11) NOT NULL DEFAULT '0',
@@ -177,12 +177,12 @@ CREATE TABLE IF NOT EXISTS `notification` (
   CONSTRAINT `FK_inxhsk5bf6gpm7b41orsar7fc` FOREIGN KEY (`comment_id`) REFERENCES `comment` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
 
--- 正在导出表  spring_winds.notification 的数据：~33 rows (大约)
+-- 正在导出表  spring_abc.notification 的数据：~33 rows (大约)
 DELETE FROM `notification`;
 
 
 
--- 导出  表 spring_winds.page 结构
+-- 导出  表 spring_abc.page 结构
 CREATE TABLE IF NOT EXISTS `page` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `content` longtext NOT NULL,
@@ -195,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `page` (
   UNIQUE KEY `UK_f6ctahf1jnokrtpp5wblm0shb` (`url`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- 正在导出表  spring_winds.page 的数据：~3 rows (大约)
+-- 正在导出表  spring_abc.page 的数据：~3 rows (大约)
 DELETE FROM `page`;
 /*!40000 ALTER TABLE `page` DISABLE KEYS */;
 INSERT INTO `page` (`id`, `content`, `create_at`, `title`, `update_at`, `url`, `view_count`) VALUES
@@ -205,7 +205,7 @@ INSERT INTO `page` (`id`, `content`, `create_at`, `title`, `update_at`, `url`, `
 /*!40000 ALTER TABLE `page` ENABLE KEYS */;
 
 
--- 导出  表 spring_winds.property 结构
+-- 导出  表 spring_abc.property 结构
 CREATE TABLE IF NOT EXISTS `property` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `keyword` varchar(255) NOT NULL,
@@ -213,7 +213,7 @@ CREATE TABLE IF NOT EXISTS `property` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
--- 正在导出表  spring_winds.property 的数据：~19 rows (大约)
+-- 正在导出表  spring_abc.property 的数据：~19 rows (大约)
 DELETE FROM `property`;
 /*!40000 ALTER TABLE `property` DISABLE KEYS */;
 INSERT INTO `property` (`id`, `keyword`, `name`) VALUES
@@ -239,7 +239,7 @@ INSERT INTO `property` (`id`, `keyword`, `name`) VALUES
 /*!40000 ALTER TABLE `property` ENABLE KEYS */;
 
 
--- 导出  表 spring_winds.section 结构
+-- 导出  表 spring_abc.section 结构
 CREATE TABLE IF NOT EXISTS `section` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -248,7 +248,7 @@ CREATE TABLE IF NOT EXISTS `section` (
   UNIQUE KEY `UK_rwqtt5x96oahjdtqt20vxu4um` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- 正在导出表  spring_winds.section 的数据：~4 rows (大约)
+-- 正在导出表  spring_abc.section 的数据：~4 rows (大约)
 DELETE FROM `section`;
 /*!40000 ALTER TABLE `section` DISABLE KEYS */;
 INSERT INTO `section` (`id`, `name`, `sort`) VALUES
@@ -256,7 +256,7 @@ INSERT INTO `section` (`id`, `name`, `sort`) VALUES
 /*!40000 ALTER TABLE `section` ENABLE KEYS */;
 
 
--- 导出  表 spring_winds.topic 结构
+-- 导出  表 spring_abc.topic 结构
 CREATE TABLE IF NOT EXISTS `topic` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `collecton_id` int(11) DEFAULT NULL,
@@ -281,12 +281,12 @@ CREATE TABLE IF NOT EXISTS `topic` (
   CONSTRAINT `FK_c975xs66f0v6extdjdl0csctr` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
--- 正在导出表  spring_winds.topic 的数据：~8 rows (大约)
+-- 正在导出表  spring_abc.topic 的数据：~8 rows (大约)
 DELETE FROM `topic`;
 
 
 
--- 导出  表 spring_winds.user 结构
+-- 导出  表 spring_abc.user 结构
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `avatar` varchar(255) DEFAULT NULL,
@@ -313,7 +313,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   UNIQUE KEY `UK_ob8kqyqqgmefl0aco34akdtpe` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- 正在导出表  spring_winds.user 的数据：~6 rows (大约)
+-- 正在导出表  spring_abc.user 的数据：~6 rows (大约)
 DELETE FROM `user`;
 
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
