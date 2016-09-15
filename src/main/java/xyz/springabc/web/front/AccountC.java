@@ -304,7 +304,7 @@ public class AccountC {
     /**
      * 更新用户信息，需要登录授权
      *
-     * @param user
+     * @param newUserForm
      * @param errors
      * @param file
      * @param request
@@ -312,30 +312,28 @@ public class AccountC {
      * @return
      */
     @RequestMapping(value = "/setting/update", method = RequestMethod.POST)
-    public String updateInfomatio(@Validated User user,
+    public String updateInfomatio(@Validated User newUserForm,
                                   Errors errors,
                                   MultipartFile file,
                                   HttpServletRequest request,
                                   Model model) {
         User oldUser = (User) request.getSession().getAttribute("user");
-        String avatar = "";
+        String avatar = oldUser.getAvatar();
         if (!file.isEmpty()) {//判断有没有上传了头像
             try {
-                avatar = uploadFileServ.upload(file).url;
-                avatar = oldUser.getAvatar();//没有上传新头像就用回原来的
+                avatar = uploadFileServ.upload(file).url;//上传了头像就更新
             } catch (Exception e1) {
                 model.addAttribute("error", "头像上传失败");
                 return "/account/setting";
             }
         }
-        avatar = oldUser.getAvatar();//没有上传新头像就用回原来的
-        user.setAvatar(avatar);
-        User newUser = userServ.update(oldUser, user, errors);
+        newUserForm.setAvatar(avatar);
+        userServ.update(oldUser, newUserForm, errors);
         if (errors.hasErrors()) {
             model.addAttribute("error", errors.getAllErrors());
             return "/account/setting";
         }
-        request.getSession().setAttribute("user", newUser);
+        request.getSession().setAttribute("user", oldUser);
         model.addAttribute("msg", "信息已更新");
         return "/account/setting";
     }

@@ -105,24 +105,24 @@ public class UserServ {
      * @throws ValidateError
      */
     @Transactional
-    public User update(User oldUser, User newUser, Errors errors) {
+    public User update(User oldUser, User newUserForm, Errors errors) {
         if (errors.hasErrors()) {
             return null;
         }
         //旧信息和信息的昵称不相同，并且数据库已经有了这样的昵称
-        if (userRepo.findOneByNick(newUser.getNick()) != null && !newUser.getNick().equals(oldUser.getNick())) {
+        if (userRepo.findOneByNick(newUserForm.getNick()) != null && !newUserForm.getNick().equals(oldUser.getNick())) {
             errors.rejectValue("nick", "nick", "昵称已经存在");
             return null;
         }
         //引用复制更新属性
-        oldUser.setNick(newUser.getNick());
-        oldUser.setAvatar(newUser.getAvatar());
-        oldUser.setLocation(newUser.getLocation());
-        oldUser.setHomePage(newUser.getHomePage());
-        oldUser.setGithub(newUser.getGithub());
-        oldUser.setTwitter(newUser.getTwitter());
-        oldUser.setSignature(newUser.getSignature());
-        oldUser.setDescription(newUser.getDescription());
+        oldUser.setNick(newUserForm.getNick());
+        oldUser.setAvatar(newUserForm.getAvatar());
+        oldUser.setLocation(newUserForm.getLocation());
+        oldUser.setHomePage(newUserForm.getHomePage());
+        oldUser.setGithub(newUserForm.getGithub());
+        oldUser.setTwitter(newUserForm.getTwitter());
+        oldUser.setSignature(newUserForm.getSignature());
+        oldUser.setDescription(newUserForm.getDescription());
         userRepo.save(oldUser);
         //更新了旧用户
         return oldUser;
